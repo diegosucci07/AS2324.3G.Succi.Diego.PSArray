@@ -7,6 +7,9 @@
             Console.WriteLine("Diego Succi 3G 29/02/2024");
             Console.WriteLine("inserire il numero di voti");
             int nvoti = Convert.ToInt32(Console.ReadLine());
+            double[]voti = new double[nvoti];
+            int[]pesi = new int[nvoti];
+            CaricaVettori(ref voti, ref pesi, nvoti);
             StampaVotiPesi(voti, pesi, nvoti);
             
         }
@@ -15,9 +18,18 @@
             Console.WriteLine(" voti  -  pesi ");
             for (int i = 0; i < voti.Length; i++)
             {
-                Console.WriteLine(voti[i] + pesi[i]);
+                Console.WriteLine($"    {voti[i]}  -  {pesi[i]} ");
             }
             
+        }
+        static void CaricaVettori(ref double[] voti, ref int[]pesi, int nvoti)
+        {
+            Random random = new Random();
+            for(int i = 0; i< nvoti; i++)
+            {
+                voti[i] = random.Next(0,11);
+                pesi[i] = random.Next(0, 101);
+            }
         }
     }
 }
