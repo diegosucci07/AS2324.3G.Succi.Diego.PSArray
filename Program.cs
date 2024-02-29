@@ -89,6 +89,15 @@
                 }
             }
         }
-
+        static void OrdinaPerVoto(ref double[] voti, ref int[] pesi, int nVoti)
+        {
+            double temp = 0;
+            int temppesi = 0;
+            for(int i = 0; i < nVoti ; i++)
+            {
+                for (int j = 0; j < nVoti ; j++) { 
+                }
+            }
+        }
     }
 }
