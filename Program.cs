@@ -14,10 +14,14 @@
             StampaVotiDispariMaggiori4(ref voti, ref pesi,nVoti);
             double max = 0;
             double min = 0;
-            double posmax = 0;
-            double posmin = 0;
+            int posmax = 0;
+            int posmin = 0;
             double mediaponderata = MediaPonderata(voti, pesi, nVoti,ref max,ref posmax,ref min,ref posmin);
-
+            Console.WriteLine($"la media ponderata è di{mediaponderata}");
+            Console.WriteLine($"il voto massimimo è {max} ed è in posizione {posmax}.");
+            Console.WriteLine($"il voto minimo è {min} ed è in posizione {posmin}.");
+            int voto = 0;
+            ElencoVotiNellIntorno(voti, pesi, nVoti, voto);
         }
         static void StampaVotiPesi(double[] voti, int[] pesi, int nVoti)
         {
@@ -75,6 +79,16 @@
             }
             return mediaponderata;
         }
-        
+        static void ElencoVotiNellIntorno(double[] voti, int[] pesi, int nVoti, int voto)
+        {
+            for (int i = 0; i < nVoti; i++)
+            {
+                if(voti[i] > voto-0.5 && voti[i]< voto + 0.5)
+                {
+                    Console.WriteLine($"il voto {voti[i]} in posizione {i+1} è nell'intorno di + o - 0,5");
+                }
+            }
+        }
+
     }
 }
